@@ -1,11 +1,11 @@
 export async function getServicios() {
-    const response = await fetch("http://localhost:5142/api/Servicios");
+    const response = await fetch("https://backendprueba-hwcs.onrender.com");
     if (!response.ok) throw new Error("Error al cargar servicios");
     return response.json();
 }
 
 export async function crearServicio(payload) {
-    const res = await fetch("http://localhost:5142/api/Servicios", {
+    const res = await fetch("https://backendprueba-hwcs.onrender.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -19,7 +19,7 @@ export async function crearServicio(payload) {
     return res.json();
 }
 
-const BASE_URL = "http://localhost:5142/api/Servicios";
+const BASE_URL = "https://backendprueba-hwcs.onrender.com";
 
 export async function actualizarServicio(id, payload) {
     const res = await fetch(`${BASE_URL}/${id}`, {
